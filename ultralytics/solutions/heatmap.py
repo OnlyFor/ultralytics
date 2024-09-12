@@ -25,9 +25,6 @@ class Heatmap:
         view_in_counts=True,
         view_out_counts=True,
         count_reg_pts=None,
-        count_txt_color=(0, 0, 0),
-        count_bg_color=(255, 255, 255),
-        count_reg_color=(255, 0, 255),
         line_thickness=2,
         decay_factor=0.99,
         shape="circle",
@@ -57,15 +54,12 @@ class Heatmap:
 
         # Region & Line Information
         self.counting_region = None
-        self.region_color = count_reg_color
 
         # Object Counting Information
         self.in_counts = 0
         self.out_counts = 0
         self.count_ids = []
         self.class_wise_count = {}
-        self.count_txt_color = count_txt_color
-        self.count_bg_color = count_bg_color
 
         # Decay factor
         self.decay_factor = decay_factor
@@ -130,7 +124,7 @@ class Heatmap:
             # Draw counting region
             if self.count_reg_pts is not None:
                 self.annotator.draw_region(
-                    reg_pts=self.count_reg_pts, color=self.region_color, thickness=self.tf*2
+                    reg_pts=self.count_reg_pts, color=(255, 0, 255), thickness=self.tf*2
                 )
 
             for box, cls, track_id in zip(boxes, clss, track_ids):
@@ -226,7 +220,7 @@ class Heatmap:
                         labels_dict[str.capitalize(key)] = f"IN {value['IN']} OUT {value['OUT']}"
 
             if labels_dict is not None:
-                self.annotator.display_analytics(self.im0, labels_dict, self.count_txt_color, self.count_bg_color, 10)
+                self.annotator.display_analytics(self.im0, labels_dict, (104, 31, 17), (255, 255, 255), 10)
 
         # Normalize, apply colormap to heatmap and combine with original image
         heatmap_normalized = cv2.normalize(self.heatmap, None, 0, 255, cv2.NORM_MINMAX)
