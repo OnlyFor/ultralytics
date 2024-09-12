@@ -274,8 +274,6 @@ A heatmap generated with [Ultralytics YOLOv8](https://github.com/ultralytics/ult
 | Name               | Type             | Default            | Description                                                       |
 | ------------------ | ---------------- | ------------------ | ----------------------------------------------------------------- |
 | `names`            | `list`           | `None`             | Dictionary of class names.                                        |
-| `imw`              | `int`            | `0`                | Image width.                                                      |
-| `imh`              | `int`            | `0`                | Image height.                                                     |
 | `colormap`         | `int`            | `cv2.COLORMAP_JET` | Colormap to use for the heatmap.                                  |
 | `heatmap_alpha`    | `float`          | `0.5`              | Alpha blending value for heatmap overlay.                         |
 | `view_img`         | `bool`           | `False`            | Whether to display the image with the heatmap overlay.            |
@@ -285,8 +283,6 @@ A heatmap generated with [Ultralytics YOLOv8](https://github.com/ultralytics/ult
 | `count_txt_color`  | `tuple`          | `(0, 0, 0)`        | Text color for displaying counts.                                 |
 | `count_bg_color`   | `tuple`          | `(255, 255, 255)`  | Background color for displaying counts.                           |
 | `count_reg_color`  | `tuple`          | `(255, 0, 255)`    | Color for the counting region.                                    |
-| `region_thickness` | `int`            | `5`                | Thickness of the region line.                                     |
-| `line_dist_thresh` | `int`            | `15`               | Distance threshold for line-based counting.                       |
 | `line_thickness`   | `int`            | `2`                | Thickness of the lines used in drawing.                           |
 | `decay_factor`     | `float`          | `0.99`             | Decay factor for the heatmap to reduce intensity over time.       |
 | `shape`            | `str`            | `"circle"`         | Shape of the heatmap blobs ('circle' or 'rect').                  |

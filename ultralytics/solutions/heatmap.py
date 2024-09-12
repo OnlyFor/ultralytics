@@ -19,8 +19,6 @@ class Heatmap:
     def __init__(
         self,
         names,
-        imw=0,
-        imh=0,
         colormap=cv2.COLORMAP_JET,
         heatmap_alpha=0.5,
         view_img=False,
@@ -30,8 +28,6 @@ class Heatmap:
         count_txt_color=(0, 0, 0),
         count_bg_color=(255, 255, 255),
         count_reg_color=(255, 0, 255),
-        region_thickness=5,
-        line_dist_thresh=15,
         line_thickness=2,
         decay_factor=0.99,
         shape="circle",
@@ -46,8 +42,6 @@ class Heatmap:
         self.names = names  # Classes names
 
         # Image information
-        self.imw = imw
-        self.imh = imh
         self.im0 = None
         self.tf = line_thickness
         self.view_in_counts = view_in_counts
@@ -58,16 +52,11 @@ class Heatmap:
         self.heatmap = None
         self.heatmap_alpha = heatmap_alpha
 
-        # Predict/track information
-        self.boxes = []
-        self.track_ids = []
-        self.clss = []
+        # track information
         self.track_history = defaultdict(list)
 
         # Region & Line Information
         self.counting_region = None
-        self.line_dist_thresh = line_dist_thresh
-        self.region_thickness = region_thickness
         self.region_color = count_reg_color
 
         # Object Counting Information
@@ -77,7 +66,6 @@ class Heatmap:
         self.class_wise_count = {}
         self.count_txt_color = count_txt_color
         self.count_bg_color = count_bg_color
-        self.cls_txtdisplay_gap = 50
 
         # Decay factor
         self.decay_factor = decay_factor
@@ -85,13 +73,21 @@ class Heatmap:
         # Check if environment supports imshow
         self.env_check = check_imshow(warn=True)
 
+        self.counting_line_segment = None   # Initialize the counting line segment
+
         # Region and line selection
         self.count_reg_pts = count_reg_pts
-        print(self.count_reg_pts)
         if self.count_reg_pts is not None:
             if len(self.count_reg_pts) == 2:
                 print("Line Counter Initiated.")
                 self.counting_region = LineString(self.count_reg_pts)
+                # Define the counting line segment
+                self.counting_line_segment = LineString(
+                    [
+                        (self.count_reg_pts[0][0], self.count_reg_pts[0][1]),
+                        (self.count_reg_pts[1][0], self.count_reg_pts[1][1]),
+                    ]
+                )
             elif len(self.count_reg_pts) >= 3:
                 print("Polygon Counter Initiated.")
                 self.counting_region = Polygon(self.count_reg_pts)
@@ -105,18 +101,6 @@ class Heatmap:
             print("Unknown shape value provided, 'circle' & 'rect' supported")
             print("Using Circular shape now")
             self.shape = "circle"
-
-    def extract_results(self, tracks):
-        """
-        Extracts results from the provided data.
-
-        Args:
-            tracks (list): List of tracks obtained from the object tracking process.
-        """
-        if tracks[0].boxes.id is not None:
-            self.boxes = tracks[0].boxes.xyxy.cpu()
-            self.clss = tracks[0].boxes.cls.tolist()
-            self.track_ids = tracks[0].boxes.id.int().tolist()
 
     def generate_heatmap(self, im0, tracks):
         """
@@ -134,18 +118,22 @@ class Heatmap:
             self.initialized = True
 
         self.heatmap *= self.decay_factor  # decay factor
+        boxes, clss, track_ids = None, None, None
+        if tracks[0].boxes.id is not None:
+            boxes = tracks[0].boxes.xyxy.cpu()
+            clss = tracks[0].boxes.cls.tolist()
+            track_ids = tracks[0].boxes.id.int().tolist()
 
-        self.extract_results(tracks)
         self.annotator = Annotator(self.im0, self.tf, None)
 
-        if self.track_ids:
+        if track_ids:
             # Draw counting region
             if self.count_reg_pts is not None:
                 self.annotator.draw_region(
-                    reg_pts=self.count_reg_pts, color=self.region_color, thickness=self.region_thickness
+                    reg_pts=self.count_reg_pts, color=self.region_color, thickness=self.tf*2
                 )
 
-            for box, cls, track_id in zip(self.boxes, self.clss, self.track_ids):
+            for box, cls, track_id in zip(boxes, clss, track_ids):
                 # Store class info
                 if self.names[cls] not in self.class_wise_count:
                     self.class_wise_count[self.names[cls]] = {"IN": 0, "OUT": 0}
@@ -190,13 +178,17 @@ class Heatmap:
                     # Count objects using line
                     elif len(self.count_reg_pts) == 2:
                         if prev_position is not None and track_id not in self.count_ids:
-                            distance = Point(track_line[-1]).distance(self.counting_region)
-                            if distance < self.line_dist_thresh and track_id not in self.count_ids:
+                            # Check if the object's movement segment intersects the counting line
+                            if LineString([(prev_position[0], prev_position[1]), (box[0], box[1])]).intersects(
+                                    self.counting_line_segment
+                            ):
                                 self.count_ids.append(track_id)
 
-                                if (box[0] - prev_position[0]) * (
-                                    self.counting_region.centroid.x - prev_position[0]
-                                ) > 0:
+                                # Determine the direction of movement (IN or OUT)
+                                direction = (box[0] - prev_position[0]) * (
+                                        self.counting_region.centroid.x - prev_position[0]
+                                )
+                                if direction > 0:
                                     self.in_counts += 1
                                     self.class_wise_count[self.names[cls]]["IN"] += 1
                                 else:
@@ -204,7 +196,7 @@ class Heatmap:
                                     self.class_wise_count[self.names[cls]]["OUT"] += 1
 
         else:
-            for box, cls in zip(self.boxes, self.clss):
+            for box, cls in zip(boxes, clss):
                 if self.shape == "circle":
                     center = (int((box[0] + box[2]) // 2), int((box[1] + box[3]) // 2))
                     radius = min(int(box[2]) - int(box[0]), int(box[3]) - int(box[1])) // 2
