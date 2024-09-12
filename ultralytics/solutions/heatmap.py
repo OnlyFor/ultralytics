@@ -27,13 +27,11 @@ class Heatmap:
         count_reg_pts=None,
         line_thickness=2,
         decay_factor=0.99,
-        shape="circle",
     ):
         """Initializes the heatmap class with default values for Visual, Image, track, count and heatmap parameters."""
         # Visual information
         self.annotator = None
         self.view_img = view_img
-        self.shape = shape
 
         self.initialized = False
         self.names = names  # Classes names
@@ -90,12 +88,6 @@ class Heatmap:
                 print("Using Line Counter Now")
                 self.counting_region = LineString(self.count_reg_pts)
 
-        # Shape of heatmap, if not selected
-        if self.shape not in {"circle", "rect"}:
-            print("Unknown shape value provided, 'circle' & 'rect' supported")
-            print("Using Circular shape now")
-            self.shape = "circle"
-
     def generate_heatmap(self, im0, tracks):
         """
         Generate heatmap based on tracking data.
@@ -132,19 +124,15 @@ class Heatmap:
                 if self.names[cls] not in self.class_wise_count:
                     self.class_wise_count[self.names[cls]] = {"IN": 0, "OUT": 0}
 
-                if self.shape == "circle":
-                    center = (int((box[0] + box[2]) // 2), int((box[1] + box[3]) // 2))
-                    radius = min(int(box[2]) - int(box[0]), int(box[3]) - int(box[1])) // 2
+                center = (int((box[0] + box[2]) // 2), int((box[1] + box[3]) // 2))
+                radius = min(int(box[2]) - int(box[0]), int(box[3]) - int(box[1])) // 2
 
-                    y, x = np.ogrid[0 : self.heatmap.shape[0], 0 : self.heatmap.shape[1]]
-                    mask = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= radius**2
+                y, x = np.ogrid[0 : self.heatmap.shape[0], 0 : self.heatmap.shape[1]]
+                mask = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= radius**2
 
-                    self.heatmap[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])] += (
-                        2 * mask[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])]
-                    )
-
-                else:
-                    self.heatmap[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])] += 2
+                self.heatmap[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])] += (
+                    2 * mask[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])]
+                )
 
                 # Store tracking hist
                 track_line = self.track_history[track_id]
@@ -191,19 +179,15 @@ class Heatmap:
 
         else:
             for box, cls in zip(boxes, clss):
-                if self.shape == "circle":
-                    center = (int((box[0] + box[2]) // 2), int((box[1] + box[3]) // 2))
-                    radius = min(int(box[2]) - int(box[0]), int(box[3]) - int(box[1])) // 2
+                center = (int((box[0] + box[2]) // 2), int((box[1] + box[3]) // 2))
+                radius = min(int(box[2]) - int(box[0]), int(box[3]) - int(box[1])) // 2
 
-                    y, x = np.ogrid[0 : self.heatmap.shape[0], 0 : self.heatmap.shape[1]]
-                    mask = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= radius**2
+                y, x = np.ogrid[0 : self.heatmap.shape[0], 0 : self.heatmap.shape[1]]
+                mask = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= radius**2
 
-                    self.heatmap[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])] += (
-                        2 * mask[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])]
-                    )
-
-                else:
-                    self.heatmap[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])] += 2
+                self.heatmap[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])] += (
+                    2 * mask[int(box[1]) : int(box[3]), int(box[0]) : int(box[2])]
+                )
 
         if self.count_reg_pts is not None:
             labels_dict = {}
