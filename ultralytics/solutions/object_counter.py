@@ -88,6 +88,37 @@ class ObjectCounter:
             ]
         )
 
+    def mouse_event_for_region(self, event, x, y, flags, params):
+        """
+        Handles mouse events for defining and moving the counting region in a real-time video stream.
+
+        Args:
+            event (int): The type of mouse event (e.g., cv2.EVENT_MOUSEMOVE, cv2.EVENT_LBUTTONDOWN, etc.).
+            x (int): The x-coordinate of the mouse pointer.
+            y (int): The y-coordinate of the mouse pointer.
+            flags (int): Any associated event flags (e.g., cv2.EVENT_FLAG_CTRLKEY,  cv2.EVENT_FLAG_SHIFTKEY, etc.).
+            params (dict): Additional parameters for the function.
+        """
+        if event == cv2.EVENT_LBUTTONDOWN:
+            for i, point in enumerate(self.reg_pts):
+                if (
+                    isinstance(point, (tuple, list))
+                    and len(point) >= 2
+                    and (abs(x - point[0]) < 10 and abs(y - point[1]) < 10)
+                ):
+                    self.selected_point = i
+                    self.is_drawing = True
+                    break
+
+        elif event == cv2.EVENT_MOUSEMOVE:
+            if self.is_drawing and self.selected_point is not None:
+                self.reg_pts[self.selected_point] = (x, y)
+                self.counting_region = Polygon(self.reg_pts)
+
+        elif event == cv2.EVENT_LBUTTONUP:
+            self.is_drawing = False
+            self.selected_point = None
+
     def extract_and_process_tracks(self, tracks):
         """Extracts and processes tracks for object counting in a video stream."""
         # Annotator Init and region drawing
@@ -175,6 +206,17 @@ class ObjectCounter:
         if labels_dict:
             annotator.display_analytics(self.im0, labels_dict, (104, 31, 17), (255, 255, 255), 10)
 
+    def display_frames(self):
+        """Displays the current frame with annotations and regions in a window."""
+        if self.env_check:
+            cv2.namedWindow(self.window_name)
+            if len(self.reg_pts) == 4:  # only add mouse event If user drawn region
+                cv2.setMouseCallback(self.window_name, self.mouse_event_for_region, {"region_points": self.reg_pts})
+            cv2.imshow(self.window_name, self.im0)
+            # Break Window
+            if cv2.waitKey(1) & 0xFF == ord("q"):
+                return
+
     def start_counting(self, im0, tracks):
         """
         Main function to start the object counting process.
@@ -186,11 +228,8 @@ class ObjectCounter:
         self.im0 = im0  # store image
         self.extract_and_process_tracks(tracks)  # draw region even if no objects
 
-        if self.view_img and self.env_check:
-            cv2.imshow(self.window_name, self.im0)
-            # Break Window
-            if cv2.waitKey(1) & 0xFF == ord("q"):
-                return
+        if self.view_img:
+            self.display_frames()
         return self.im0
 
 
