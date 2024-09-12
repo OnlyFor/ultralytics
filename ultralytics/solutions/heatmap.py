@@ -22,8 +22,6 @@ class Heatmap:
         colormap=cv2.COLORMAP_JET,
         heatmap_alpha=0.5,
         view_img=False,
-        view_in_counts=True,
-        view_out_counts=True,
         count_reg_pts=None,
         line_thickness=2,
         decay_factor=0.99,
@@ -39,8 +37,6 @@ class Heatmap:
         # Image information
         self.im0 = None
         self.tf = line_thickness
-        self.view_in_counts = view_in_counts
-        self.view_out_counts = view_out_counts
 
         # Heatmap colormap and heatmap np array
         self.colormap = colormap
@@ -193,15 +189,7 @@ class Heatmap:
             labels_dict = {}
 
             for key, value in self.class_wise_count.items():
-                if value["IN"] != 0 or value["OUT"] != 0:
-                    if not self.view_in_counts and not self.view_out_counts:
-                        continue
-                    elif not self.view_in_counts:
-                        labels_dict[str.capitalize(key)] = f"OUT {value['OUT']}"
-                    elif not self.view_out_counts:
-                        labels_dict[str.capitalize(key)] = f"IN {value['IN']}"
-                    else:
-                        labels_dict[str.capitalize(key)] = f"IN {value['IN']} OUT {value['OUT']}"
+                labels_dict[str.capitalize(key)] = f"IN {value['IN']} OUT {value['OUT']}"
 
             if labels_dict is not None:
                 self.annotator.display_analytics(self.im0, labels_dict, (104, 31, 17), (255, 255, 255), 10)
