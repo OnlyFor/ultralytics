@@ -200,16 +200,12 @@ class Heatmap:
         self.im0 = cv2.addWeighted(self.im0, 1 - self.heatmap_alpha, heatmap_colored, self.heatmap_alpha, 0)
 
         if self.env_check and self.view_img:
-            self.display_frames()
+            cv2.imshow("Ultralytics Heatmap", self.im0)
+
+            if cv2.waitKey(1) & 0xFF == ord("q"):
+                return
 
         return self.im0
-
-    def display_frames(self):
-        """Display frame."""
-        cv2.imshow("Ultralytics Heatmap", self.im0)
-
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            return
 
 
 if __name__ == "__main__":
