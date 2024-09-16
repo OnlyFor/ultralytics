@@ -1,0 +1,25 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# Default YOLO solutions settings
+
+# counter
+show_in: True,
+show_out: True,
+
+# generic
+region: None,
+
+#queue
+
+
+colormap: cv2.COLORMAP_JET,
+heatmap_alpha: 0.5,
+region_thickness: 5,
+line_dist_thresh: 15,
+decay_factor: 0.99,
+kpts_to_check: None,
+pose_up_angle: 145.0,
+pose_down_angle: 90.0,
+pose_type: "pullup"
+line_color: (255, 0, 255),
+centroid_color: (104, 31, 17),
+spdl_dist_thresh: 10
