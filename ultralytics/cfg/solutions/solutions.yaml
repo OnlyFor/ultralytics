@@ -8,7 +8,7 @@ show_out: True,
 # generic
 region: None,
 
-#queue
+#queue: None
 
 
 colormap: cv2.COLORMAP_JET,
