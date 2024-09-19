@@ -64,7 +64,7 @@ To train a YOLO model on the Caltech-256 dataset for 100 epochs, you can use the
 
 The Caltech-256 dataset contains high-quality color images of various objects, providing a comprehensive dataset for object recognition tasks. Here are some examples of images from the dataset ([credit](https://ml4a.github.io/demos/tsne_viewer.html)):
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/caltech256-sample-image.avif)
+![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/caltech256-sample-image.jpg)
 
 The example showcases the diversity and complexity of the objects in the Caltech-256 dataset, emphasizing the importance of a varied dataset for training robust object recognition models.
 
