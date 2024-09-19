@@ -8,7 +8,7 @@ keywords: Visual Studio Code, VS Code, deep learning, convolutional neural netwo
 
 <p align="center">
   <br>
-    <img src="https://github.com/ultralytics/docs/releases/download/0/snippet-prediction-preview.avif" alt="Snippet Prediction Preview">
+    <img src="https://github.com/ultralytics/docs/releases/download/0/snippet-prediction-preview.jpg" alt="Snippet Prediction Preview">
   <br>
   Run example code using Ultralytics YOLO in under 20 seconds! 🚀
 </p>
@@ -51,7 +51,7 @@ Want to let us know what you use for developing code? Head over to our Discourse
 
 <p align="center">
   <br>
-    <img src="https://github.com/ultralytics/docs/releases/download/0/vs-code-extension-menu.avif" alt="VS Code extension menu">
+    <img src="https://github.com/ultralytics/docs/releases/download/0/vs-code-extension-menu.jpg" alt="VS Code extension menu">
   <br>
 </p>
 
@@ -65,7 +65,7 @@ Want to let us know what you use for developing code? Head over to our Discourse
 
 <p align="center">
   <br>
-    <img src="https://github.com/ultralytics/docs/releases/download/0/vscode-marketplace-extension-install.avif" alt="VS Code marketplace extension install">
+    <img src="https://github.com/ultralytics/docs/releases/download/0/vscode-marketplace-extension-install.jpg" alt="VS Code marketplace extension install">
   <br>
   Visual Studio Code Extension Marketplace page for <a href="https://marketplace.visualstudio.com/items?itemName=Ultralytics.ultralytics-snippets">Ultralytics-Snippets</a>
 </p>
@@ -90,7 +90,7 @@ Many snippets have "fields" with default placeholder values or names. For instan
 
 <p align="center">
   <br>
-    <img src="https://github.com/ultralytics/docs/releases/download/0/multi-update-field-and-options.avif" alt="Multi-update field and options">
+    <img src="https://github.com/ultralytics/docs/releases/download/0/multi-update-field-and-options.jpg" alt="Multi-update field and options">
   <br>
   After inserting snippet, renaming <code>model</code> as <code>world_model</code> updates all instances. Pressing <kbd>Tab ⇥</kbd> moves to the next field, which opens a dropdown menu and allows for selection of a model scale, and moving to the next field provides another dropdown to choose either <code>world</code> or <code>worldv2</code> model variant.
 </p>
@@ -105,7 +105,7 @@ The snippets are named in the most descriptive way possible, but this means ther
 
 <p align="center">
   <br>
-    <img src="https://github.com/ultralytics/docs/releases/download/0/incomplete-snippet-example.avif" alt="Incomplete Snippet Example">
+    <img src="https://github.com/ultralytics/docs/releases/download/0/incomplete-snippet-example.jpg" alt="Incomplete Snippet Example">
   <br>
   Typing <code>ex-yolo-p</code> will <em>still</em> arrive at the correct snippet.
 </p>
@@ -161,7 +161,7 @@ However, since Ultralytics supports numerous [tasks], when [working with inferen
 
 <p align="center">
   <br>
-    <img src="https://github.com/ultralytics/docs/releases/download/0/results-loop-options.avif" alt="Results Loop Options">
+    <img src="https://github.com/ultralytics/docs/releases/download/0/results-loop-options.jpg" alt="Results Loop Options">
   <br>
   Once tabbed to the <code>boxes</code> field, a dropdown menu appears to allow selection of another attribute as required.
 </p>
@@ -241,7 +241,7 @@ Like any other VS Code extension, you can uninstall it by navigating to the Exte
 
 <p align="center">
   <br>
-    <img src="https://github.com/ultralytics/docs/releases/download/0/vscode-extension-menu.avif" alt="VS Code extension menu">
+    <img src="https://github.com/ultralytics/docs/releases/download/0/vscode-extension-menu.jpg" alt="VS Code extension menu">
   <br>
 </p>
 

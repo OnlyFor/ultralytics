@@ -13,7 +13,7 @@ This is where a platform like Paperspace Gradient can make things simpler. Paper
 ## Paperspace
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/paperspace-overview.avif" alt="Paperspace Overview">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/paperspace-overview.jpg" alt="Paperspace Overview">
 </p>
 
 [Paperspace](https://www.paperspace.com/), launched in 2014 by University of Michigan graduates and acquired by DigitalOcean in 2023, is a cloud platform specifically designed for machine learning. It provides users with powerful GPUs, collaborative Jupyter notebooks, a container service for deployments, automated workflows for machine learning tasks, and high-performance virtual machines. These features aim to streamline the entire machine learning development process, from coding to deployment.
@@ -21,7 +21,7 @@ This is where a platform like Paperspace Gradient can make things simpler. Paper
 ## Paperspace Gradient
 
 <p align="center">
-  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/paperspace-gradient-overview.avif" alt="PaperSpace Gradient Overview">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/paperspace-gradient-overview.jpg" alt="PaperSpace Gradient Overview">
 </p>
 
 Paperspace Gradient is a suite of tools designed to make working with AI and machine learning in the cloud much faster and easier. Gradient addresses the entire machine learning development process, from building and training models to deploying them.
@@ -34,7 +34,7 @@ Paperspace Gradient makes training a YOLOv8 model possible with a few clicks. Th
 
 Sign in and then click on the “Start Machine” button shown in the image below. In a few seconds, a managed GPU environment will start up, and then you can run the notebook's cells.
 
-![Training YOLOv8 Using Paperspace Gradient](https://github.com/ultralytics/docs/releases/download/0/start-machine-button.avif)
+![Training YOLOv8 Using Paperspace Gradient](https://github.com/ultralytics/docs/releases/download/0/start-machine-button.jpg)
 
 Explore more capabilities of YOLOv8 and Paperspace Gradient in a discussion with Glenn Jocher, Ultralytics founder, and James Skelton from Paperspace. Watch the discussion below.
 

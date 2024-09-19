@@ -15,7 +15,7 @@ Hyperparameter tuning is vital in achieving peak model performance by discoverin
 ### Ray Tune
 
 <p align="center">
-  <img width="640" src="https://github.com/ultralytics/docs/releases/download/0/ray-tune-overview.avif" alt="Ray Tune Overview">
+  <img width="640" src="https://github.com/ultralytics/docs/releases/download/0/ray-tune-overview.jpg" alt="Ray Tune Overview">
 </p>
 
 [Ray Tune](https://docs.ray.io/en/latest/tune/index.html) is a hyperparameter tuning library designed for efficiency and flexibility. It supports various search strategies, parallelism, and early stopping strategies, and seamlessly integrates with popular machine learning frameworks, including Ultralytics YOLOv8.
