@@ -149,13 +149,13 @@ YOLOv8 benchmarks were run by the Ultralytics team on nine different model forma
     === "YOLOv8n"
 
         <div style="text-align: center;">
-            <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/yolov8n-benchmark-comparison.avif" alt="NVIDIA Jetson Ecosystem">
+            <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/yolov8n-benchmark-comparison.jpg" alt="NVIDIA Jetson Ecosystem">
         </div>
 
     === "YOLOv8s"
 
         <div style="text-align: center;">
-            <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/yolov8s-performance-comparison.avif" alt="NVIDIA Jetson Ecosystem">
+            <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/yolov8s-performance-comparison.jpg" alt="NVIDIA Jetson Ecosystem">
         </div>
 
 ### Detailed Comparison Table

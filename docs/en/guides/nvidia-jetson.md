@@ -19,7 +19,7 @@ This comprehensive guide provides a detailed walkthrough for deploying Ultralyti
   <strong>Watch:</strong> How to Setup NVIDIA Jetson with Ultralytics YOLOv8
 </p>
 
-<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/nvidia-jetson-ecosystem.avif" alt="NVIDIA Jetson Ecosystem">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/nvidia-jetson-ecosystem.jpg" alt="NVIDIA Jetson Ecosystem">
 
 !!! note
 
@@ -287,7 +287,7 @@ YOLOv8 benchmarks were run by the Ultralytics team on 10 different model formats
 Even though all model exports are working with NVIDIA Jetson, we have only included **PyTorch, TorchScript, TensorRT** for the comparison chart below because, they make use of the GPU on the Jetson and are guaranteed to produce the best results. All the other exports only utilize the CPU and the performance is not as good as the above three. You can find benchmarks for all exports in the section after this chart.
 
 <div style="text-align: center;">
-    <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/nvidia-jetson-ecosystem-2.avif" alt="NVIDIA Jetson Ecosystem">
+    <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/nvidia-jetson-ecosystem-2.jpg" alt="NVIDIA Jetson Ecosystem">
 </div>
 
 ### Detailed Comparison Table
@@ -441,7 +441,7 @@ When using NVIDIA Jetson, there are a couple of best practices to follow in orde
     jtop
     ```
 
-<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/jetson-stats-application.avif" alt="Jetson Stats">
+<img width="1024" src="https://github.com/ultralytics/docs/releases/download/0/jetson-stats-application.jpg" alt="Jetson Stats">
 
 ## Next Steps
 

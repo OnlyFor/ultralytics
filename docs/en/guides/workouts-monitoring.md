@@ -29,10 +29,10 @@ Monitoring workouts through pose estimation with [Ultralytics YOLOv8](https://gi
 
 ## Real World Applications
 
-|                                        Workouts Monitoring                                         |                                        Workouts Monitoring                                         |
-| :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: |
-| ![PushUps Counting](https://github.com/ultralytics/docs/releases/download/0/pushups-counting.avif) | ![PullUps Counting](https://github.com/ultralytics/docs/releases/download/0/pullups-counting.avif) |
-|                                          PushUps Counting                                          |                                          PullUps Counting                                          |
+|                                        Workouts Monitoring                                        |                                        Workouts Monitoring                                        |
+|:-------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------:|
+| ![PushUps Counting](https://github.com/ultralytics/docs/releases/download/0/pushups-counting.jpg) | ![PullUps Counting](https://github.com/ultralytics/docs/releases/download/0/pullups-counting.jpg) |
+|                                         PushUps Counting                                          |                                         PullUps Counting                                          |
 
 !!! example "Workouts Monitoring Example"
 
@@ -108,7 +108,7 @@ Monitoring workouts through pose estimation with [Ultralytics YOLOv8](https://gi
 
 ### KeyPoints Map
 
-![keyPoints Order Ultralytics YOLOv8 Pose](https://github.com/ultralytics/docs/releases/download/0/keypoints-order-ultralytics-yolov8-pose.avif)
+![keyPoints Order Ultralytics YOLOv8 Pose](https://github.com/ultralytics/docs/releases/download/0/keypoints-order-ultralytics-yolov8-pose.jpg)
 
 ### Arguments `AIGym`
 

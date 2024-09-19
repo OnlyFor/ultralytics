@@ -6,7 +6,7 @@ keywords: YOLOv8, Security Alarm System, real-time object detection, Ultralytics
 
 # Security Alarm System Project Using Ultralytics YOLOv8
 
-<img src="https://github.com/ultralytics/docs/releases/download/0/security-alarm-system-ultralytics-yolov8.avif" alt="Security Alarm System">
+<img src="https://github.com/ultralytics/docs/releases/download/0/security-alarm-system-ultralytics-yolov8.jpg" alt="Security Alarm System">
 
 The Security Alarm System Project utilizing Ultralytics YOLOv8 integrates advanced computer vision capabilities to enhance security measures. YOLOv8, developed by Ultralytics, provides real-time object detection, allowing the system to identify and respond to potential security threats promptly. This project offers several advantages:
 
@@ -175,7 +175,7 @@ That's it! When you execute the code, you'll receive a single notification on yo
 
 #### Email Received Sample
 
-<img width="256" src="https://github.com/ultralytics/docs/releases/download/0/email-received-sample.avif" alt="Email Received Sample">
+<img width="256" src="https://github.com/ultralytics/docs/releases/download/0/email-received-sample.jpg" alt="Email Received Sample">
 
 ## FAQ
 
