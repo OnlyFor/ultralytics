@@ -29,7 +29,7 @@ keywords: Open Images V7, Google dataset, computer vision, YOLOv8 models, object
 | [YOLOv8l](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8l-oiv7.pt) | 640                   | 34.9                 | 596.9                          | 2.43                                | 44.1               | 167.4             |
 | [YOLOv8x](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8x-oiv7.pt) | 640                   | 36.3                 | 860.6                          | 3.56                                | 68.7               | 260.6             |
 
-![Open Images V7 classes visual](https://github.com/ultralytics/docs/releases/download/0/open-images-v7-classes-visual.avif)
+![Open Images V7 classes visual](https://github.com/ultralytics/docs/releases/download/0/open-images-v7-classes-visual.jpg)
 
 ## Key Features
 
@@ -105,7 +105,7 @@ To train a YOLOv8n model on the Open Images V7 dataset for 100 epochs with an im
 
 Illustrations of the dataset help provide insights into its richness:
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/oidv7-all-in-one-example-ab.avif)
+![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/oidv7-all-in-one-example-ab.jpg)
 
 - **Open Images V7**: This image exemplifies the depth and detail of annotations available, including bounding boxes, relationships, and segmentation masks.
 

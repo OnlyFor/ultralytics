@@ -74,7 +74,7 @@ To train a YOLOv8n model on the VisDrone dataset for 100 epochs with an image si
 
 The VisDrone dataset contains a diverse set of images and videos captured by drone-mounted cameras. Here are some examples of data from the dataset, along with their corresponding annotations:
 
-![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/visdrone-object-detection-sample.avif)
+![Dataset sample image](https://github.com/ultralytics/docs/releases/download/0/visdrone-object-detection-sample.jpg)
 
 - **Task 1**: Object detection in images - This image demonstrates an example of object detection in images, where objects are annotated with bounding boxes. The dataset provides a wide variety of images taken from different locations, environments, and densities to facilitate the development of models for this task.
 
