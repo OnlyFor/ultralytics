@@ -8,7 +8,7 @@ keywords: Ultralytics, YOLOv8, object counting, object blurring, security system
 
 Ultralytics Solutions provide cutting-edge applications of YOLO models, offering real-world solutions like object counting, blurring, and security systems, enhancing efficiency and accuracy in diverse industries. Discover the power of YOLOv8 for practical, impactful implementations.
 
-![Ultralytics Solutions Thumbnail](https://github.com/ultralytics/docs/releases/download/0/ultralytics-solutions-thumbnail.avif)
+![Ultralytics Solutions Thumbnail](https://github.com/ultralytics/docs/releases/download/0/ultralytics-solutions-thumbnail.jpg)
 
 ## Solutions
 
