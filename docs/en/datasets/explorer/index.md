@@ -7,7 +7,7 @@ keywords: Ultralytics Explorer, CV datasets, semantic search, SQL queries, vecto
 # Ultralytics Explorer
 
 <p>
-    <img width="1709" alt="Ultralytics Explorer Screenshot 1" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-1.avif">
+    <img width="1709" alt="Ultralytics Explorer Screenshot 1" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-1.jpg">
 </p>
 
 <a href="https://colab.research.google.com/github/ultralytics/ultralytics/blob/main/docs/en/datasets/explorer/explorer.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
@@ -56,7 +56,7 @@ yolo explorer
     You can set it like this - `yolo settings openai_api_key="..."`
 
 <p>
-    <img width="1709" alt="Ultralytics Explorer OpenAI Integration" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-explorer-openai-integration.avif">
+    <img width="1709" alt="Ultralytics Explorer OpenAI Integration" src="https://github.com/ultralytics/docs/releases/download/0/ultralytics-explorer-openai-integration.jpg">
 </p>
 
 ## FAQ

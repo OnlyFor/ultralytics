@@ -9,7 +9,7 @@ keywords: Ultralytics Explorer GUI, semantic search, vector similarity, SQL quer
 Explorer GUI is like a playground build using [Ultralytics Explorer API](api.md). It allows you to run semantic/vector similarity search, SQL queries and even search using natural language using our ask AI feature powered by LLMs.
 
 <p>
-    <img width="1709" alt="Explorer Dashboard Screenshot 1" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-1.avif">
+    <img width="1709" alt="Explorer Dashboard Screenshot 1" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-1.jpg">
 </p>
 
 <p align="center">
@@ -42,13 +42,13 @@ For example:
 In this VOC Exploration dashboard, user selects a couple airplane images like this:
 
 <p>
-<img width="1710" alt="Explorer Dashboard Screenshot 2" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-2.avif">
+<img width="1710" alt="Explorer Dashboard Screenshot 2" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-2.jpg">
 </p>
 
 On performing similarity search, you should see a similar result:
 
 <p>
-<img width="1710" alt="Explorer Dashboard Screenshot 3" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-3.avif">
+<img width="1710" alt="Explorer Dashboard Screenshot 3" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-3.jpg">
 </p>
 
 ## Ask AI
@@ -56,7 +56,7 @@ On performing similarity search, you should see a similar result:
 This allows you to write how you want to filter your dataset using natural language. You don't have to be proficient in writing SQL queries. Our AI powered query generator will automatically do that under the hood. For example - you can say - "show me 100 images with exactly one person and 2 dogs. There can be other objects too" and it'll internally generate the query and show you those results. Here's an example output when asked to "Show 10 images with exactly 5 persons" and you'll see a result like this:
 
 <p>
-<img width="1709" alt="Explorer Dashboard Screenshot 4" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-4.avif">
+<img width="1709" alt="Explorer Dashboard Screenshot 4" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-4.jpg">
 </p>
 
 Note: This works using LLMs under the hood so the results are probabilistic and might get things wrong sometimes
@@ -70,7 +70,7 @@ WHERE labels LIKE '%person%' AND labels LIKE '%dog%'
 ```
 
 <p>
-<img width="1707" alt="Explorer Dashboard Screenshot 5" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-5.avif">
+<img width="1707" alt="Explorer Dashboard Screenshot 5" src="https://github.com/ultralytics/docs/releases/download/0/explorer-dashboard-screenshot-5.jpg">
 </p>
 
 This is a Demo build using the Explorer API. You can use the API to build your own exploratory notebooks or scripts to get insights into your datasets. Learn more about the Explorer API [here](api.md).
